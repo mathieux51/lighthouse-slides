@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Lighthouse</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<style>
+		.reveal .slide-number {
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 50px;
+			right: inherit;
+			display: flex !important;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.reveal .table {
+			font-size: 30px;
+		}
+
+		.reveal section img {
+			border: 0;
+		}
+	</style>
+	<!-- Printing and PDF exports -->
+	<script>
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<img height="300" src="img/lighthouse-logo.png" alt="lighthouse-logo">
+				<h1>Lighthouse</h1>
+				<h1><del>Late house</del></h1>
+			</section>
+			<section id='table-of-contents'>
+				<h3>Table of contents</h3>
+				<ul>
+					<li>What is it❓</li>
+					<li>Why❓</li>
+					<li>How❓</li>
+					<li>Audit References 📖</li>
+					<li>What can I do? 🤓</li>
+					<li>Lighthouse & Altran: Demo time 🎉</li>
+				</ul>
+			</section>
+			<section>
+				<h2 id="what-is-it">What is it?</h2>
+				<blockquote cite='https://github.com/GoogleChrome/lighthouse'>
+					"Auditing, performance metrics, and best practices"
+				</blockquote>
+
+			</section>
+			<section id='why'>
+				<h2>Why❓</h2>
+				<ul>
+					<li>non-technical audience</li>
+					<li>performance is a team concern</li>
+					<li>advices</li>
+					<li>build by the best</li>
+					<li>...</li>
+				</ul>
+			</section>
+
+			<section id="how">
+				<section id="lagriculteur">
+					<h2>Thanks 🙏</h2>
+					<a href="https://www.lagriculteur.fr/">lagriculteur.fr</a>
+				</section>
+				<section>
+					<h2>How</h2>
+					<ul>
+						<li>Chrome DevTools</li>
+						<li>Chrome extension</li>
+						<li>Node CLI</li>
+					</ul>
+					<h3>👉 Demo</h3>
+				</section>
+				<section>
+					<h3>Chrome Devtools: example.com</h3>
+					<img height='450' src="img/example.com-inspect.png" alt="example.com right click to inspect">
+				</section>
+				<section>
+					<h3>???</h3>
+					<img height='450' src="img/example.com-inspect-lol.png" alt="example.com right click to inspect joke">
+				</section>
+				<section id="duckduckgo-search-chrome-extension">
+					<h3>Chrome extension</h3>
+					<img src="img/duckduckgo-search-chrome-extension.png" alt="duckduckgo search chrome extension">
+				</section>
+				<section>
+					<h3>Node CLI</h3>
+					<code>npm i lighthouse -g</code>
+				</section>
+			</section>
+			<section id="audit-references">
+				<section>
+					<h2>Audit References</h2>
+					<h3>Performance</h3>
+				</section>
+				<section id="critical-request-chains">
+					<h4>Critical Request Chains</h4>
+					<img height='500' src="img/critical-request-chains.png" alt="critical request chains">
+				</section>
+				<section id='defer-unused-css'>
+					<h4>Defer unused CSS</h4>
+					<span>👉 Coverage tab</span>
+					<iframe src="https://carbon.now.sh/embed/?bg=rgba(255%2C255%2C255%2C1)&t=one-light&wt=none&l=htmlmixed&ds=false&dsyoff=0px&dsblur=100px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fm=Hack&fs=18px&lh=133%25&si=false&code=%253C!doctype%2520html%253E%250A%253Chtml%253E%250A%2520%2520%253Chead%253E%250A%2520%2520%2520%2520%253Cstyle%253E%250A%2520%2520%2520%2520%2520%2520%252F*%2520Critical%2520CSS%2520here.%2520*%252F%250A%2520%2520%2520%2520%253C%252Fstyle%253E%250A%2520%2520%2520%2520...&es=2x&wm=false&ts=false"
+					 style="transform:scale(1); width:1024px; height:473px; border:0; overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+					</iframe>
+				</section>
+				<section id="enable-text-compression">
+					<h4>Enable Text Compression</h4>
+					<ol>
+						<li>Use Brotli</li>
+						<li>Use GZIP</li>
+					</ol>
+					<p>Check the <code>Content-Encoding</code> header in the Response Headers section.</p>
+				</section>
+				<section id="enable-text-compression">
+					<h4>Enable Text Compression</h4>
+					<img src="img/enable-text-compression.png" alt="enable text compression">
+				</section>
+				<section id="first-contentful-paint">
+					<h4>First Contentful Paint</h4>
+					Browser renders the first bit of content from the DOM
+				</section>
+				<section id="first-cpu-idle">
+					<h4>First CPU Idle</h4>
+					Measures when a page is minimally interactive
+				</section>
+				<section id="first-meaningful-paint">
+					<h4>First Meaningful Paint</h4>
+					Primary content of the page is visible 🧐
+				</section>
+				<section id="avoids-enormous-network-payloads">
+					<h4>Avoids Enormous Network Payloads</h4>
+					<ul>
+						<li>Big Vendor</li>
+						<li><code>/api</code> payloads</li>
+						<li>Images</li>
+					</ul>
+				</section>
+				<section id="has-multiple-page-redirects">
+					<h4>Has multiple page redirects</h4>
+				</section>
+				<section id="java-script-bootup-time-is-too-high">
+					<h4>JavaScript Bootup Time Is Too High</h4>
+					Only send the code that your users need.
+				</section>
+				<section id="keep-server-response-times-low">
+					<h4>Keep Server Response Times Low</h4>
+					Benchmark your apis
+				</section>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h4>What can I do?</h4>
+					<ul>
+						<li>Prevent render blocking CSS</li>
+						<li>HTTP Caching</li>
+						<li>Intersection observer</li>
+						<li>Defer requests until they're needed</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4>Code specific</h4>
+					<ul>
+						<li>Compression </li>
+						<li>Minification</li>
+						<li>Tree shaking</li>
+						<li>Code splitting</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Code specific: Compression</h4>
+					<iframe src="https://carbon.now.sh/embed/?bg=rgba(255%2C255%2C255%2C1)&t=one-light&wt=none&l=javascript&ds=false&dsyoff=0px&dsblur=100px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fm=Hack&fs=18px&lh=133%25&si=false&code=plugins%253A%2520%255B%250A%2520%2520isProd%2520%253F%2520new%2520CompressionPlugin()%2520%253A%2520null%252C%250A%2520%2520isProd%2520%253F%2520new%2520BrotliPlugin()%2520%253A%2520null%252C%250A%255D.filter(Boolean)&es=2x&wm=false&ts=false"
+					 style="transform:scale(1); width:1024px; height:473px; border:0; overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+					</iframe>
+				</section>
+
+				<section>
+					<h4>Images</h4>
+					<ul>
+						<li><a href="https://tinyjpg.com">Compression</a></li>
+						<li>Optimize images</li>
+					</ul>
+				</section>
+
+				<section id="http-caching-code-compression">
+					<h4>HTTP Caching + code compression</h4>
+					<iframe src="https://carbon.now.sh/embed/?bg=rgba(255%2C255%2C255%2C1)&t=one-light&wt=none&l=javascript&ds=false&dsyoff=0px&dsblur=100px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fm=Hack&fs=18px&lh=133%25&si=false&code=app.use(%250A%2520%2520'%252Fstatic'%252C%250A%2520%2520expressStaticGzip(path.join(__dirname%252C%2520'..%252FbuildClient')%252C%2520%257B%250A%2520%2520%2520%2520enableBrotli%253A%2520true%252C%250A%2520%2520%2520%2520orderPreference%253A%2520%255B'br'%255D%252C%250A%2520%2520%2520%2520setHeaders(res%252C%2520path)%2520%257B%250A%2520%2520%2520%2520%2520%2520res.setHeader(%250A%2520%2520%2520%2520%2520%2520%2520%2520'Cache-Control'%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520isRevved(path)%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253F%2520'max-age%253D31536000%252C%2520immutable'%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253A%2520'max-age%253D0%252C%2520s-maxage%253D31536000'%250A%2520%2520%2520%2520%2520%2520)%250A%2520%2520%2520%2520%257D%250A%2520%2520%257D)%250A)&es=2x&wm=false&ts=false"
+					 style="transform:scale(1); width:1024px; height:473px; border:0; overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+					</iframe>
+				</section>
+
+				<section id="intersection-observer">
+					<h4>Intersection observer</h4>
+					<iframe src="https://carbon.now.sh/embed/?bg=rgba(255%2C255%2C255%2C1)&t=one-light&wt=none&l=javascript&ds=false&dsyoff=0px&dsblur=100px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fm=Hack&fs=18px&lh=133%25&si=false&code=const%2520observer%2520%253D%2520new%2520IntersectionObserver(callback%252C%2520options)&es=2x&wm=false&ts=false"
+					 style="transform:scale(1); width:1024px; height:473px; border:0; overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+					</iframe>
+					<a href="https://codesandbox.io/s/v0wllvynml">Demo</a>
+				</section>
+			</section>
+			<section>
+				<h1>Demo time</h1>
+				<h1>BOOM</h1>
+				<h1>💥💥💥</h1>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			],
+			slideNumber: true,
+		});
+	</script>
+</body>
+
+</html>
