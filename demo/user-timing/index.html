@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User timing API</title>
+</head>
+
+<body>
+  <code>Check User timing in the performance tab of your devtools</code>
+  <script>
+    window.performance.mark('Start 🦇')
+    for (let i = 0; i < 9999999; i++) {
+      window.batman += 'Batman'
+    }
+    window.performance.mark('End 🐭')
+    window.performance.measure('Batman! 🦇🦇🦇', 'Start 🦇', 'End 🐭')
+  </script>
+</body>
+
+</html>
